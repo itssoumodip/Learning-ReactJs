@@ -1,11 +1,10 @@
 
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [color, setColor] = useState("Olive")
 
   return (
-    <>
-    </>
+    <div className="w-full h-screen duration-200"></div>
   )
 }
 
