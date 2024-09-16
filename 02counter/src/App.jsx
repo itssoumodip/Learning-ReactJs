@@ -10,8 +10,17 @@ function App() {
   //let counter = 15
 
   const addValue = () => {
-    if (counter<20)
-      setCounter(counter+1)
+    if (counter<20) {
+      // setCounter(counter+1)
+      // setCounter(counter+1)
+      // setCounter(counter+1)
+      // setCounter(counter+1)
+      // WRONG METHOD - 
+      setCounter(prevCounter => prevCounter + 1)
+      setCounter(prevCounter => prevCounter + 1)
+      setCounter(prevCounter => prevCounter + 1)
+      setCounter(prevCounter => prevCounter + 1)
+    }
     else 
       console.log("Counter cannot Go above 20")
   }
