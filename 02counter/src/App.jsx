@@ -17,7 +17,7 @@ function App() {
   }
 
   const removeValue = () => {
-    if (counter>0)
+    if (counter>0) 
       setCounter(counter-1)
     else
       console.log("Counter cannot Go below 0")
