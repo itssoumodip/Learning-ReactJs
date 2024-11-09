@@ -7,7 +7,8 @@ export const ToDoContext = createContext({
             todo: "Todo msg", //proparties
             completed: false,
         }
-    ]
+    ],
+    addTodo: (todo) => {}
 })
 
 export const useTodo = () => {
