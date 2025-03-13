@@ -3,7 +3,7 @@ import './App.css'
 
 function App() {
 
-  let [counter, setCounter] = useState(15) //default value 
+  const [counter, setCounter] = useState(15) //default value 
 
   // let counter = 15
 
