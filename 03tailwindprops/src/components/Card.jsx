@@ -6,7 +6,7 @@ function Card({username,btnText="VISIT ME"}) {
   console.log(username)
 
   return (
-    <div className="relative h-[400px] w-[300px] rounded-md">
+    <div className="relative h-[400px] w-[300px] rounded-md m-4">
       <img
         src="https://img.freepik.com/free-photo/full-shot-ninja-wearing-equipment_23-2150960979.jpg?t=st=1726467879~exp=1726471479~hmac=8e74f382eb2040df389085cacc2be333ea25cf9e14b377895b783b25ef6e7b21&w=1060&amp;fit=crop&amp;w=800&amp;q=60"
         alt="AirMax Pro"
