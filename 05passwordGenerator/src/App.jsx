@@ -18,6 +18,7 @@ function App() {
 
     for (let i = 1; i <= length; i++) {
       let char = Math.floor(Math.random() * str.length + 1)
+      console.log(char)
       pass += str.charAt(char)
     }
 
@@ -84,9 +85,6 @@ function App() {
               }}
             />
             <label htmlFor='charInput'>Characters</label>
-
-
-
           </div>
         </div>
       </div>
