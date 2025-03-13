@@ -1,25 +1,20 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
 
   let [counter, setCounter] = useState(15) //default value 
 
-  //let counter = 15
+  // let counter = 15
 
   const addValue = () => {
     if (counter<20) {
       // setCounter(counter+1)
       // setCounter(counter+1)
       // setCounter(counter+1)
-      // setCounter(counter+1)
+      setCounter(counter+1)
       // WRONG METHOD - 
-      setCounter(prevCounter => prevCounter + 1)
-      setCounter(prevCounter => prevCounter + 1)
-      setCounter(prevCounter => prevCounter + 1)
-      setCounter(prevCounter => prevCounter + 1)
+      // setCounter(prevCounter => prevCounter + 1)
     }
     else 
       console.log("Counter cannot Go above 20")
