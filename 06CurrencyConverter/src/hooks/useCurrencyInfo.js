@@ -7,8 +7,9 @@ function useCurrencyInfo(currency){
         .then((res) => res.json())
         .then((res) => setData(res.rates))
         .catch((error) => console.error("Error fetching currency data:", error))
+        console.log(data)
     }, [currency])
-    
+    console.log(data)
     return data
 }
 

@@ -26,11 +26,13 @@ function InputBox({
                     placeholder="Amount"
                     disabled={amountDisable}
                     value={amount}
-                    onChange={(e) => {
-                        // Pass the raw value when empty, otherwise convert to Number
-                        const value = e.target.value === '' ? '' : Number(e.target.value);
-                        onAmountChange && onAmountChange(value);
-                    }}
+                    onChange={(e) => 
+                        // // Pass the raw value when empty, otherwise convert to Number
+                        // const value = e.target.value === '' ? '' : Number(e.target.value);
+                        // onAmountChange && onAmountChange(value);
+
+                        onAmountChange && onAmountChange(Number(e.target.value))
+                    }
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">

@@ -1,12 +1,14 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { InputBox } from './components'
 import './App.css'
 import useCurrencyInfo from './hooks/useCurrencyInfo'
+
 function App() {
-  const [amount, setAmount] = useState(0)
-  const [from, serForm] = useState("usd")
+  const [amount, setAmount] = useState('')
+  const [from, setFrom] = useState("usd")
   const [to, setTo] = useState("inr")
   const [ConvertedAmount, setConvertedAmount] = useState(0)
+  const [allCurrencies, setAllCurrencies] = useState([])
 
   const currencyInfo = useCurrencyInfo(from)
 
@@ -20,15 +22,12 @@ function App() {
   }
 
   const convert = () => {
-    setConvertedAmount(amount * currencyInfo[to])
+    setConvertedAmount(parseFloat(amount) * currencyInfo[to] || 0)
   }
 
   return (
     <div
-      className="w-full h-screen flex flex-wrap justify-center items-center bg-cover bg-no-repeat"
-      style={{
-        backgroundColor: 'gray',
-      }}
+      className="w-full h-screen bg-black flex flex-wrap justify-center items-center"
     >
       <div className="w-full">
         <div className="w-full max-w-md mx-auto border border-gray-60 rounded-lg p-5 backdrop-blur-sm bg-white/30">
@@ -43,7 +42,7 @@ function App() {
                 label="From"
                 amount={amount}
                 currencyOptions={options}
-                onCurrencyChange={(currency) => setAmount(amount)}
+                onCurrencyChange={(currency) => setFrom(currency)}
                 selectCurrency={from}
                 onAmountChange={(amount) => setAmount(amount)}
               />
@@ -63,13 +62,12 @@ function App() {
                 amount={ConvertedAmount}
                 currencyOptions={options}
                 onCurrencyChange={(currency) => setTo(currency)}
-                selectCurrency={from}
-                amountDissable
-
+                selectCurrency={to}
+                amountDisable={true}
               />
             </div>
             <button type="submit" className="w-full bg-blue-600 text-white px-4 py-3 rounded-lg">
-              Convert {from.toUpperCase()} to {to.toUpperCase}
+              Convert {from.toUpperCase()} to {to.toUpperCase()}
             </button>
           </form>
         </div>
