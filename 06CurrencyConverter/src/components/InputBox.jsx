@@ -7,7 +7,7 @@ function InputBox({
     onCurrencyChange,
     currencyOptions = [],
     selectCurrency = "usd",
-    amountDissable = false,
+    amountDisable = false,
     currencyDisable = false,
     className = "",
 }) {
@@ -24,9 +24,13 @@ function InputBox({
                     className="outline-none w-full bg-transparent py-1.5"
                     type="number"
                     placeholder="Amount"
-                    disabled={amountDissable}
+                    disabled={amountDisable}
                     value={amount}
-                    onChange={(e) => onAmountChange && onAmountChange(Number(e.target.value))}
+                    onChange={(e) => {
+                        // Pass the raw value when empty, otherwise convert to Number
+                        const value = e.target.value === '' ? '' : Number(e.target.value);
+                        onAmountChange && onAmountChange(value);
+                    }}
                 />
             </div>
             <div className="w-1/2 flex flex-wrap justify-end text-right">
@@ -37,11 +41,9 @@ function InputBox({
                     onChange={(e) => onCurrencyChange && onCurrencyChange(e.target.value)}
                     disabled={currencyDisable}
                 >
-
                     {currencyOptions.map((currency) => (
                         <option key={currency} 
                             value={currency}>
-                            {/* remember the key in loops */}
                             {currency}
                         </option>
                     ))}
