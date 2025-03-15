@@ -12,7 +12,7 @@ function Header() {
                             className="mr-3 h-12"
                             alt="Logo"
                         />
-                    </Link>
+                    </Link> 
                     <div className="flex items-center lg:order-2">
                         <Link
                             to="#"
